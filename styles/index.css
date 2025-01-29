@@ -15,24 +15,6 @@ html {
   color: #1D1E25;
 }
 
-body::-webkit-scrollbar {
-  width: 0.625rem;
-  background: #bbbbbb;
-  border-radius: 0.625rem;
-}
-
-body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 0.375rem rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0 0.375rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.625rem;
-  background-color: #f9f9fd;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 0.625rem;
-  background: #2196F3;
-}
-
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,9 +92,32 @@ body {
   text-decoration: none;
   -webkit-transition: 150ms ease-out;
   transition: 150ms ease-out;
+  position: relative;
 }
 .hero-block header nav a:hover {
   color: #212121;
+}
+.hero-block header nav a::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 0.0625rem;
+  background: #000;
+}
+.hero-block header nav a::after {
+  width: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.hero-block header nav a:hover:after {
+  width: 100%;
 }
 .hero-block header button {
   width: 14.0625rem;
@@ -213,6 +218,13 @@ body {
 }
 .hero-block .title .block button:hover {
   background-color: #212121;
+}
+.hero-block .title .block button:active {
+  -webkit-transition: 50ms;
+  transition: 50ms;
+  -webkit-transform: scale(0.99);
+      -ms-transform: scale(0.99);
+          transform: scale(0.99);
 }
 .hero-block .title .mp4 {
   width: 60.125rem;
