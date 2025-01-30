@@ -270,8 +270,6 @@ body {
   height: 100%;
 }
 .cases-section .swipe-block .swiper-slide {
-  text-align: center;
-  font-size: 1.125rem;
   background: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,9 +277,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .cases-section .swipe-block .swiper-slide .slide {
   width: 58rem;
@@ -351,14 +346,24 @@ body {
 }
 .cases-section .swipe-block .swiper-slide img {
   display: block;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.cases-section .swipe-block .firstImg {
+  width: 33.25rem;
+  height: 110.9375rem;
+}
+.cases-section .swipe-block .secondImg {
+  width: 58rem;
+  height: 64.5625rem;
+}
+.cases-section .swipe-block .thirdImg {
+  width: 58rem;
+  height: 64.5625rem;
+}
+.cases-section .swipe-block .forthImg {
+  width: 50.625rem;
+  height: 56.4375rem;
 }
 .cases-section .swipe-block .swiper {
   margin-left: auto;
@@ -370,6 +375,7 @@ body {
   background-color: #fff;
   border-radius: 100rem;
   border: 0.0625rem solid rgba(33, 33, 33, 0.0784313725);
+  background-image: none !important;
 }
 
 .tg-advantages-section {

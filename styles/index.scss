@@ -260,12 +260,9 @@ $full: 100rem;
 		}
 		
 		.swiper-slide {
-			text-align: center;
-			font-size: 1.125rem;
 			background: none;
 			display: flex;
 			justify-content: center;
-			align-items: center;
 
 			.slide{
 				width: 58rem;
@@ -319,10 +316,28 @@ $full: 100rem;
 		
 		.swiper-slide img {
 			display: block;
-			width: min-content;
-			height: min-content;
 			object-fit: contain;
 		 }
+
+		 .firstImg{
+			width: 33.25rem;
+			height: 110.9375rem;
+		}
+
+		.secondImg{
+			width: 58rem;
+			height: 64.5625rem;
+		}
+
+		.thirdImg{
+			width: 58rem;
+			height: 64.5625rem;
+		}
+
+		.forthImg{
+			width: 50.625rem;
+			height: 56.4375rem;
+		}
 	
 		 .swiper {
 			margin-left: auto;
@@ -335,6 +350,7 @@ $full: 100rem;
 			background-color: #fff;
 			border-radius: $full;
 			border: 0.0625rem solid #21212114;
+			background-image: none !important;
 		}
 
 	}
