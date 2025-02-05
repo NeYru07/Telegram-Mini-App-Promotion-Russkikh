@@ -1067,13 +1067,13 @@ footer .input-block .inputs .names input {
 }
 
 .error {
-  border: 1px solid red !important;
+  border: 0.0625rem solid red !important;
 }
 
 .error-message {
   color: red;
-  font-size: 14px;
-  margin-left: 40px;
+  font-size: 0.875rem;
+  margin-left: 2.5rem;
 }
 
 .modal {
