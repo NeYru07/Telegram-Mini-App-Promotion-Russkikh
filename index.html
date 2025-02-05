@@ -257,30 +257,70 @@
 
 		<footer id="services">
 			<div class="CTA-block">
-				<div class="CTA">
-					<h1>Готовы выйти на новый уровень и захватить глобальный рынок?</h1>
-					<h2>Мы поможем вам стать лидером мобильной коммерции в России и за её пределами!  </h2>
-				</div>
-				<p>©️ Студия Сайтов 2025. Все права защищены</p>
+			  <div class="CTA">
+				 <h1>Готовы выйти на новый уровень и захватить глобальный рынок?</h1>
+				 <h2>Мы поможем вам стать лидером мобильной коммерции в России и за её пределами!</h2>
+			  </div>
+			  <p>©️ Студия Сайтов 2025. Все права защищены</p>
 			</div>
 			<div class="input-block">
 				<div class="inputs">
-					<div class="names">
-						<input class="small" type="text" placeholder="Имя*">
-						<input class="small" type="text" placeholder="Фамилия*">
-					</div>
-					<input type="tel" placeholder="Номер телефона*">
-					<input type="text"placeholder="Сфера бизнеса">
+				  <div class="names">
+					 <div>
+						<input class="small" type="text" placeholder="Имя*" id="firstName">
+						<div class="error-message" id="firstNameError"></div>
+					 </div>
+					 <div>
+						<input class="small" type="text" placeholder="Фамилия*" id="lastName">
+						<div class="error-message" id="lastNameError"></div>
+					 </div>
+				  </div>
+				  <div>
+					 <input class="mask-phone" type="tel" placeholder="Номер телефона*" id="phone">
+					 <div class="error-message" id="phoneError"></div>
+				  </div>
+				  <div>
+					 <input type="text" placeholder="Сфера бизнеса" id="business">
+				  </div>
 				</div>
-				<button>Отправить</button>
+				<button id="submitButton">Отправить</button>
 				<p>Нажимая кнопку «Отправить», Вы даете согласие на обработку персональных данных</p>
+			 </div>
+		 </footer>
+		 
+		 <!-- Модальное окно -->
+		 <div id="successModal" class="modal">
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <p>Данные успешно отправлены!</p>
 			</div>
-		</footer>
-	
+		 </div>
+		 
+		 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		 <script src="./scripts/slider.js"></script>
+		 <script type="module" src="./scripts/validation.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		 <script src="./scripts/mask.js"></script>
 
-		<!-- Swiper -->
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script src="./scripts/script.js"></script>
+		 <script>		
+$('.mask-phone').mask('+7 (999) 999-99-99');
 
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+    $(this).get(0).setSelectionRange(pos, pos);
+  } else if ($(this).get(0).createTextRange) {
+    var range = $(this).get(0).createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+  }
+};
+
+
+$('input[type="tel"]').click(function(){
+    $(this).setCursorPosition(4);
+  });
+		 </script>
 </body>
 </html>

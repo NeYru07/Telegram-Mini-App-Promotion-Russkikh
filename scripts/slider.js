@@ -1,3 +1,4 @@
+// Пигнитация для слайдера
 document.addEventListener("DOMContentLoaded", function () {
 	const swiper = new Swiper(".mySwiper", {
 		slidesPerView: 1,
