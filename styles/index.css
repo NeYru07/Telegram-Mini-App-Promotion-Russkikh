@@ -395,6 +395,13 @@ body {
   width: 100%;
   height: 100%;
 }
+.cases-section .swipe-block .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 .cases-section .swipe-block .swiper-slide {
   background: none;
   display: -webkit-box;
@@ -403,6 +410,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 58rem;
 }
 .cases-section .swipe-block .swiper-slide .slide {
   width: 58rem;
@@ -472,8 +482,10 @@ body {
 }
 .cases-section .swipe-block .swiper-slide img {
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cases-section .swipe-block .firstImg {
   width: 33.25rem;
@@ -839,10 +851,10 @@ body {
   display: none;
 }
 .showcases-section .swiper-button-next {
-  right: var(--swiper-navigation-sides-offset, 2.5rem);
+  right: var(--swiper-navigation-sides-offset, 1.4rem);
 }
 .showcases-section .swiper-button-prev {
-  left: var(--swiper-navigation-sides-offset, 2.5rem);
+  left: var(--swiper-navigation-sides-offset, 1.4rem);
 }
 .showcases-section .left-block {
   width: 37rem;

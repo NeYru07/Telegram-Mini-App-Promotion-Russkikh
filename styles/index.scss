@@ -357,10 +357,18 @@ $full: 100rem;
 			height: 100%;
 		}
 
+		.swiper-wrapper{
+			display: flex;
+			width: 100%;
+			height: 100%;
+		}
+
 		.swiper-slide {
 			background: none;
 			display: flex;
 			justify-content: center;
+			flex-shrink: 0;
+			width: 58rem;
 
 			.slide {
 				width: 58rem;
@@ -414,7 +422,9 @@ $full: 100rem;
 
 		.swiper-slide img {
 			display: block;
-			object-fit: contain;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		.firstImg {
@@ -723,10 +733,10 @@ gap: 3rem;
 	}
 
 	.swiper-button-next{
-		right: var(--swiper-navigation-sides-offset, 2.5rem);
+		right: var(--swiper-navigation-sides-offset, 1.4rem);
   }
 	.swiper-button-prev{
-		left: var(--swiper-navigation-sides-offset, 2.5rem);
+		left: var(--swiper-navigation-sides-offset, 1.4rem);
   }
   
   
@@ -1761,6 +1771,7 @@ $T3: 0.75rem;
 
 					.block-mobile{
 						height: 9.5rem;
+						
 
 						.p-mobile{
 							height: 4.125rem;
