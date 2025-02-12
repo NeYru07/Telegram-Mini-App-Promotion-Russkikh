@@ -6,7 +6,7 @@ import { z } from "https://cdn.jsdelivr.net/npm/zod@3.21.4/lib/index.mjs";
 			  lastName: z.string().min(2, "Фамилия обязательна для заполнения"),
 			  phone: z
 				 .string()
-				 .min(11, "Номер телефона обязателен для заполнения")
+				 .min(1, "Номер телефона обязателен для заполнения")
 				 .regex(/^(\+7|8)[\s(]?\d{3}[)\s]?\d{3}[- ]?\d{2}[- ]?\d{2}$/, "Некорректный номер телефона"),
 			  business: z.string().optional(),
 			});

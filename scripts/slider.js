@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
 				updatePagination(this.activeIndex);
 			},
 		},
+		scrollbar: {
+			el: ".swiper-scrollbar",
+			hide: false,
+		 },
 	});
 
 	// Функция для обновления пагинации
@@ -49,3 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 });
+var swiper = new Swiper(".mySwiper3", {
+	slidesPerView: 1.17,
+		spaceBetween: 16,
+		loop: false,
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	},
+ });
