@@ -124,6 +124,9 @@ $full: 100rem;
 			a:hover{
 				color: #212121;
 			}
+			a:active{
+				color: #2196F3;
+			}
 
 			a::after{
 				position: absolute;
@@ -144,6 +147,10 @@ $full: 100rem;
 			 }
 			 a:hover:after {
 				width: 100%;
+			 }
+
+			 a:active:hover:after {
+				background: #2196F3;
 			 }
 		}
 
@@ -476,6 +483,17 @@ $full: 100rem;
 			justify-content: center;
 			align-items: center;
 			color: #2121213D;
+			transition: 150ms ease-out;
+		}
+
+		.swiper-button-next:hover::after,
+		.swiper-button-prev:hover::after{
+			color: #21212170;
+		}
+
+		.swiper-button-next:active::after,
+		.swiper-button-prev:active::after{
+			color: #212121;
 		}
 
 		.swiper-button-next {
@@ -650,15 +668,17 @@ gap: 3rem;
 				height: 5.25rem;
 				display: flex;
 				flex-direction: row;
-				gap: 1.5rem;
+				gap: 1.25rem;
 
 				p{
 					width: 27.375rem;
+					height: 5.25rem;
 					font-weight: 400;
 					font-size: $T2;
 					line-height: 1.75rem;
 					letter-spacing: -0.0625rem;
 					color: #2121217A;
+					text-align: start;
 				}
 		}
 	}
@@ -794,8 +814,11 @@ gap: 3rem;
 		display: flex;
 		flex-direction: column;
 		gap: 4rem;
+		align-items: center;
 
 		p{
+			width: 60rem;
+			height: 4.875rem;
 			font-weight: 400;
 			font-size: $SH;
 			line-height: 2.45rem;
@@ -1104,6 +1127,7 @@ footer{
 			letter-spacing: -0.0625rem;
 			text-align: center;
 			width: 30rem;
+			color: #FFFFFFA3;
 		}
 
 		.inputs{
@@ -1130,6 +1154,19 @@ footer{
 				border: none;
 			}
 			
+			
+			::placeholder{
+				color: #2121213D;
+				transition: 150ms ease-out;
+			}
+
+			input:hover::placeholder{
+				color: #21212170;
+			}
+			input:focus::placeholder{
+				color: #212121;
+			}
+
 			.names{
 				width: 51rem;
 				height: 6.4375rem;
@@ -1708,8 +1745,11 @@ $T3: 0.75rem;
 			display: flex;
 			flex-direction: column;
 			gap: 2.25rem;
+			align-items: start;
 
 			p{
+				width: 19.4375rem;
+				height: 8.75rem;
 				font-weight: 400;
 				font-size: $SH;
 				line-height: 1.75rem;
@@ -1764,7 +1804,7 @@ $T3: 0.75rem;
 							color: #212121;
 							width: 16.4375rem;
 							height: 2.75rem;
-							text-align:left;
+							text-align: left;
 							
 						}
 					}

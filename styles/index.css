@@ -99,6 +99,9 @@ body {
 .hero-block header .desktop-nav a:hover {
   color: #212121;
 }
+.hero-block header .desktop-nav a:active {
+  color: #2196F3;
+}
 .hero-block header .desktop-nav a::after {
   position: absolute;
   content: "";
@@ -120,6 +123,9 @@ body {
 }
 .hero-block header .desktop-nav a:hover:after {
   width: 100%;
+}
+.hero-block header .desktop-nav a:active:hover:after {
+  background: #2196F3;
 }
 .hero-block header .buttons {
   width: -webkit-fit-content;
@@ -538,6 +544,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: rgba(33, 33, 33, 0.2392156863);
+  -webkit-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+.cases-section .swipe-block .swiper-button-next:hover::after,
+.cases-section .swipe-block .swiper-button-prev:hover::after {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+.cases-section .swipe-block .swiper-button-next:active::after,
+.cases-section .swipe-block .swiper-button-prev:active::after {
+  color: #212121;
 }
 .cases-section .swipe-block .swiper-button-next {
   right: 1rem;
@@ -754,15 +770,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 .why-tg-section .why-tg .why-tg-footer p {
   width: 27.375rem;
+  height: 5.25rem;
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.75rem;
   letter-spacing: -0.0625rem;
   color: rgba(33, 33, 33, 0.4784313725);
+  text-align: start;
 }
 
 .showcases-section {
@@ -932,8 +950,13 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .how-it-works-section .description p {
+  width: 60rem;
+  height: 4.875rem;
   font-weight: 400;
   font-size: 1.75rem;
   line-height: 2.45rem;
@@ -1259,6 +1282,7 @@ footer .input-block p {
   letter-spacing: -0.0625rem;
   text-align: center;
   width: 30rem;
+  color: rgba(255, 255, 255, 0.6392156863);
 }
 footer .input-block .inputs {
   width: 51rem;
@@ -1286,6 +1310,61 @@ footer .input-block .inputs input {
 footer .input-block .inputs input:focus {
   outline: none;
   border: none;
+}
+footer .input-block .inputs ::-webkit-input-placeholder {
+  color: rgba(33, 33, 33, 0.2392156863);
+  -webkit-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+footer .input-block .inputs ::-moz-placeholder {
+  color: rgba(33, 33, 33, 0.2392156863);
+  -moz-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+footer .input-block .inputs :-ms-input-placeholder {
+  color: rgba(33, 33, 33, 0.2392156863);
+  -ms-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+footer .input-block .inputs ::-ms-input-placeholder {
+  color: rgba(33, 33, 33, 0.2392156863);
+  -ms-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+footer .input-block .inputs ::placeholder {
+  color: rgba(33, 33, 33, 0.2392156863);
+  -webkit-transition: 150ms ease-out;
+  transition: 150ms ease-out;
+}
+footer .input-block .inputs input:hover::-webkit-input-placeholder {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+footer .input-block .inputs input:hover::-moz-placeholder {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+footer .input-block .inputs input:hover:-ms-input-placeholder {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+footer .input-block .inputs input:hover::-ms-input-placeholder {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+footer .input-block .inputs input:hover::placeholder {
+  color: rgba(33, 33, 33, 0.4392156863);
+}
+footer .input-block .inputs input:focus::-webkit-input-placeholder {
+  color: #212121;
+}
+footer .input-block .inputs input:focus::-moz-placeholder {
+  color: #212121;
+}
+footer .input-block .inputs input:focus:-ms-input-placeholder {
+  color: #212121;
+}
+footer .input-block .inputs input:focus::-ms-input-placeholder {
+  color: #212121;
+}
+footer .input-block .inputs input:focus::placeholder {
+  color: #212121;
 }
 footer .input-block .inputs .names {
   width: 51rem;
@@ -1955,8 +2034,13 @@ footer .input-block .inputs .names input {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 2.25rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
   .how-it-works-section .description p {
+    width: 19.4375rem;
+    height: 8.75rem;
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.75rem;
