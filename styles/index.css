@@ -61,6 +61,7 @@ body {
           align-items: center;
   padding-left: 2rem;
   position: relative;
+  z-index: 100;
 }
 .hero-block header .logo {
   font-size: 2rem;

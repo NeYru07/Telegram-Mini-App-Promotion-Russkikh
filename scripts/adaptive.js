@@ -46,12 +46,20 @@ function updateText() {
 	  	closeMenu.style.display = "none";
 	  	body.style.backgroundColor = "#FFFFFF00";
 		scrolling.style.overflow = "scroll"
+		gsap.to(mobileNav, {
+			opacity: 0,
+			y: -70,
+			duration: 0.4,})
 	} else {
 	  mobileNav.style.display = "flex";
 	  openMenu.style.display = "none";
 	  closeMenu.style.display = "flex";
 	  document.body.style.backgroundColor = "#2121217A"
 	  scrolling.style.overflow = "hidden"
+	  gsap.fromTo(mobileNav, 
+			{ opacity: 0, y: -120 },
+			{ opacity: 1, y: 0, duration: 0.4 }
+		 );
 	}
  });
 

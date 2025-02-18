@@ -93,7 +93,8 @@ $full: 100rem;
 		background: #FFF;
 		align-items: center;
 		padding-left: 2rem;	
-		position: relative;	
+		position: relative;
+		z-index: 100;
 
 		.logo{
 			font-size: 2rem;
