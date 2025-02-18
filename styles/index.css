@@ -2492,3 +2492,22 @@ footer .input-block .inputs .names input {
     font-size: 0.75rem;
   }
 }
+[class*=-section] {
+  opacity: 1 !important;
+  -webkit-transform: none !important;
+      -ms-transform: none !important;
+          transform: none !important;
+}
+
+.block, .mp4 {
+  will-change: transform, opacity;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .block, .mp4 {
+    -webkit-transform: none !important;
+        -ms-transform: none !important;
+            transform: none !important;
+  }
+}

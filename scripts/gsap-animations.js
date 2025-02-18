@@ -1,177 +1,108 @@
 document.addEventListener("DOMContentLoaded", function() {
-	gsap.registerPlugin(ScrollTrigger);
-	
-	gsap.from("#header", { 
-	  opacity: 0, 
-	  y: -30, 
-	  duration: 0.5, 
-	  delay: 0.2 
+	const isMobile = window.innerWidth <= 768;
+ 
+	gsap.config({
+	  force3D: false,
+	  autoSleep: 120,
+	  nullTargetWarn: false
 	});
-	gsap.from(".block", { 
-	  opacity: 0, 
-	  x: -150, 
-	  duration: 0.5, 
-	  delay: 0.5
+ 
+	ScrollTrigger.config({ markers: true });
+ 
+	gsap.from("#header", {
+	  opacity: 0,
+	  y: isMobile ? -15 : -25,
+	  duration: 0.4,
+	  delay: 0.2
 	});
-	gsap.from(".mp4", { 
-	  opacity: 0, 
-	  x: 150, 
-	  duration: 0.5, 
-	  delay: 1
-	});
-	gsap.from(".swipe-block", { 
-	  opacity: 0, 
-	  y: 150, 
-	  duration: 0.7, 
-	  stagger: 1,
-	  scrollTrigger: {
-		trigger: ".cases-section",
-		start: "top 20%",
-	 },
-	});
-	gsap.from(".desktop", { 
-	  opacity: 0, 
-	  x: -950, 
-	  duration: 0.8, 
-	  stagger: 1,
-	  delay: 0.3,
-	  scrollTrigger: {
-		trigger: ".tg-advantages-section",
-		start: "top 60%",
-	 },
-	});
-	gsap.from(".animated-img", { 
-	  opacity: 0, 
-	  x: -550, 
-	  duration: 0.5, 
-	  stagger: 1,
-	  delay: 0.3,
-	  scrollTrigger: {
-		trigger: ".why-tg-section",
-		start: "top 50%",
-	 },
-	});
-	gsap.from(".why-tg", { 
-	  opacity: 0, 
-	  x: 550, 
-	  duration: 0.5, 
-	  stagger: 1,
-	  delay: 0.7,
-	  scrollTrigger: {
-		trigger: ".why-tg-section",
-		start: "top 50%",
-	 },
-	});
-	gsap.from(".left-block", { 
-	  opacity: 0, 
-	  x: -150,
-	  y: -50, 
-	  duration: 0.5, 
-	  stagger: 1,
-	  delay: 0.1,
-	  scrollTrigger: {
-		trigger: ".showcases-section",
-		start: "top 50%",
-	 },
-	});
-	gsap.from(".img-block5", { 
-	  opacity: 0, 
-	  x: 200,
-	  y: -50,
-	  duration: 0.5, 
-	  stagger: 1,
-	  delay: 0.5,
-	  scrollTrigger: {
-		trigger: ".showcases-section",
-		start: "top 50%",
-	 },
-	});
-	gsap.from(".animateH1", {
-		opacity: 0,
-		y: -100,
-		scrollTrigger: {
-			trigger: ".how-it-works-section",
-			start: "top 30%",
-		 },
-	 });
-	gsap.from(".grid-blocks", {
-		opacity: 0,
-		x: -300,
-		scrollTrigger: {
-			trigger: ".how-it-works-section",
-			start: "top 30%",
-		 },
-	 });
-	gsap.from(".animatedP", {
-		opacity: 0,
-		y: 200,
-		scrollTrigger: {
-			trigger: ".how-it-works-section",
-			start: "top 30%",
-		 },
-	 });
-	gsap.from(".map", {
-		opacity: 0,
-		y: 500,
-		scrollTrigger: {
-			trigger: ".how-it-works-section",
-			start: "top 30%",
-		 },
-	 });
 
-	// Background
-	gsap.from(".cases-section", { 
-		z: -50, 
+	gsap.from(".block", { 
+		opacity: 0, 
+		x: isMobile ? -20 : -50,
 		duration: 0.5, 
-		backgroundColor: "#FFFFFF00",
-		scrollTrigger: {
-		 trigger: ".cases-section",
-		 start: "top 60%",
-	  },
+		delay: 0.5
 	 });
-	gsap.from(".tg-advantages-section", { 
-		z: -50, 
+  
+	 gsap.from(".mp4", { 
+		opacity: 0, 
+		x: isMobile ? 50 : 150,
 		duration: 0.5, 
-		backgroundColor: "#FFFFFF00",
-		scrollTrigger: {
-		 trigger: ".tg-advantages-section",
-		 start: "top 80%",
-	  },
+		delay: 1
 	 });
-	gsap.from(".why-tg-section", { 
-		z: -50, 
-		duration: 0.5, 
-		backgroundColor: "#FFFFFF00",
-		scrollTrigger: {
-		 trigger: ".why-tg-section",
-		 start: "top 60%",
+ 
+	const sections = {
+	  ".cases-section": {
+		 elements: ".swipe-block",
+		 mobile: { y: 30, duration: 0.6 },
+		 desktop: { y: 80, duration: 0.8 }
 	  },
-	 });
-	gsap.from(".showcases-section", { 
-		z: -50, 
-		duration: 0.5, 
-		backgroundColor: "#FFFFFF00",
-		scrollTrigger: {
-		 trigger: ".showcases-section",
-		 start: "top 60%",
+	  ".tg-advantages-section": {
+		 elements: ".desktop",
+		 mobile: { x: -30, duration: 0.5 },
+		 desktop: { x: -150, duration: 0.7 }
 	  },
-	 });
-	gsap.from(".how-it-works-section", { 
-		z: -50, 
-		duration: 0.5, 
-		backgroundColor: "#FFFFFF00",
-		scrollTrigger: {
-		 trigger: ".how-it-works-section",
-		 start: "top 60%",
+	  ".why-tg-section": {
+		 elements: [".animated-img", ".why-tg"],
+		 mobile: { y: 30, stagger: 0.2 },
+		 desktop: { x: [-50, 50], stagger: 0.3 }
 	  },
-	 });
-	 gsap.from("footer",{
-		y: 500,
-		opacity: 0,
-		duration: 1,
-		scrollTrigger: {
-			trigger: "footer",
-			start: "top 140%"
-		}
-	})
-})
+	  ".showcases-section": {
+		 elements: [".left-block", ".img-block5"],
+		 mobile: { y: 30, stagger: 0.2 },
+		 desktop: { x: [-80, 80], stagger: 0.3 }
+	  },
+	  ".how-it-works-section": {
+		 elements: [".animateH1", ".grid-blocks", ".animatedP", ".map"],
+		 mobile: { y: 30, stagger: 0.15 },
+		 desktop: { y: 50, stagger: 0.2 }
+	  }
+	};
+ 
+	function createSectionAnimation(section, settings) {
+	  const elements = document.querySelectorAll(section);
+	  
+	  elements.forEach(el => {
+		 const targets = el.querySelectorAll(settings.elements);
+		 const options = isMobile ? settings.mobile : settings.desktop;
+		 
+		 gsap.from(targets, {
+			opacity: 0,
+			...options,
+			duration: options.duration || 0.5,
+			scrollTrigger: {
+			  trigger: el,
+			  start: "top 85%", // Единая стартовая позиция
+			  end: "bottom center",
+			  toggleActions: "play none none reverse"
+			}
+		 });
+	  });
+	}
+ 
+	Object.entries(sections).forEach(([selector, settings]) => {
+	  createSectionAnimation(selector, settings);
+	});
+ 
+	gsap.from("footer", {
+	  y: isMobile ? 80 : 150,
+	  opacity: 0,
+	  duration: 0.8,
+	  scrollTrigger: {
+		 trigger: "footer",
+		 start: "top 95%",
+		 toggleActions: "play none none reverse"
+	  }
+	});
+ 
+	if (!isMobile) {
+	  gsap.from(".cases-section, .tg-advantages-section, .why-tg-section, .showcases-section", { 
+		 backgroundColor: "#FFFFFF00",
+		 duration: 0.6,
+		 scrollTrigger: {
+			trigger: ".cases-section",
+			start: "top 70%",
+			scrub: 0.5
+		 }
+	  });
+	}
+ });

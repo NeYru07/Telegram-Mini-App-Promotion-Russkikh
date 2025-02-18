@@ -2195,3 +2195,19 @@ footer{
 	font-size: 0.75rem;
 }
 }
+
+[class*="-section"] {
+	opacity: 1 !important;
+	transform: none !important;
+ }
+
+.block, .mp4 {
+	will-change: transform, opacity;
+	opacity: 1;
+ }
+ 
+ @media (max-width: 768px) {
+	.block, .mp4 {
+	  transform: none !important;
+	}
+ }
